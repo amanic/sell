@@ -1,0 +1,55 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1/test?characterEncoding=utf-8&useSSL=false
+  jpa:
+    show-sql: true
+  jackson:
+    default-property-inclusion: non_null
+  redis:
+    host: 192.168.30.113
+    port: 6379
+server:
+  context-path: /sell
+#logging:
+#  pattern:
+#    console: "%d - %msg%n"
+##  path: /var/log/tomcat/
+#  file: /var/log/tomcat/sell.log
+#  level:
+#    com.imooc.LoggerTest: debug
+
+wechat:
+  mpAppId: wx27f347f2f4c76849
+  mpAppSecret: bfbf986e8a23178486f30f74c1ad0929
+  mpToken: chenhaitao
+# 微信开放平台：用于扫描二维码授权登录
+  openAppId: wx6ad144e54af67d87
+  openAppSecret: 91a2ff6d38a2bbccfb7e9f9079108e2e
+  mchId: 1483469312
+  mchKey: 06C56A89949D617xxxxxxxxxxx
+  keyPath: /var/weixin_cert/h5.p12
+  notifyUrl: http://sell.natapp4.cc/sell/pay/notify
+  templateId:
+  # 消息模板ID
+    orderStatus: oGxDMFSETCxlczrgPRLH8u81aFS6jKMJ4dkl206HFpE
+
+projectUrl:
+  wechatMpAuthorize: http://haron.natapp1.cc
+  wechatOpenAuthorize: http://haron.natapp1.cc/sell
+  sell: http://haron.natapp1.cc/sell
+
+
+# 消费者的组名
+apache:
+  rocketmq:
+    consumer:
+      PushConsumer: PushConsumer_cht
+      consumeTopic1: TestTopic_cht1
+# 生产者的组名
+    producer:
+      producerGroup: Producer_cht
+# NameServer地址
+    namesrvAddr: 172.20.100.121:9876
